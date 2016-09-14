@@ -27,7 +27,7 @@ spa.shell = (function () {
         + '<div class="spa-shell-chat"></div>'
         + '<div class="spa-shell-modal"></div>'
     },
-    stataMap  = { $container : null },
+    stateMap  = { $container : null },
     jqueryMap = {},
 
     setJqueryMap, initModule;
