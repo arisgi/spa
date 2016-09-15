@@ -25,10 +25,10 @@ spa.shell = (function () {
         + '</div>'
         + '<div class="spa-shell-foot"></div>'
         + '<div class="spa-shell-chat"></div>'
-        + '<div class="spa-shell-modal"></div>'
-      chat_extend_time :    1000,
-      chat_retract_time :   300,
-      chat_extend_height :  450,
+        + '<div class="spa-shell-modal"></div>',
+      chat_extend_time    : 1000,
+      chat_retract_time   : 300,
+      chat_extend_height  : 450,
       chat_retract_height : 15
     },
     stateMap  = { $container : null },
@@ -93,7 +93,7 @@ spa.shell = (function () {
         }
       );
       return true;
-    }
+    };
     //---------- end DOM method ---------------------------
 
     //---------- event handler ----------------------------
@@ -108,7 +108,7 @@ spa.shell = (function () {
       setJqueryMap();
 
       // test the switching
-      setTimeout( function () {toggleChat( true );}, 3000 );
+      setTimeout( function () {toggleChat( true );}, 3000 );
       setTimeout( function () {toggleChat( false );}, 8000 );
     };
 
