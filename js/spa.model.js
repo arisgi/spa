@@ -93,11 +93,11 @@ spa.model = (function (){
   removePerson = function ( person ) {
     if ( ! person ) { return false; }
 
-    if ( person_id === configMap.ano_id ) {
+    if ( person.id === configMap.anon_id ) {
       return false;
     }
 
-    stateMap.people_db({ cid : person_cid }).remove();
+    stateMap.people_db({ cid : person.cid }).remove();
     if ( person.cid ) {
       delete stateMap.people_cid_map[ person.cid ];
     }
@@ -127,7 +127,7 @@ spa.model = (function (){
 
       sio.on( 'userupdate', completeLogin );
 
-      sio.emit( 'addUser', {
+      sio.emit( 'adduser', {
         cid     : stateMap.user.cid,
         css_map : stateMap.user.css_map,
         name    : stateMap.user.name
