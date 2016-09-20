@@ -16,6 +16,7 @@ spa.shell = (function () {
       anchor_schema_map : {
         chat : { opened : true, closed : true}
       },
+      resize_interval : 200,
       main_html : String()
         + '<div class="spa-shell-head">'
           + '<div class="spa-shell-head-logo"></div>'
@@ -29,11 +30,15 @@ spa.shell = (function () {
         + '<div class="spa-shell-foot"></div>'
         + '<div class="spa-shell-modal"></div>'
     },
-    stateMap  = { anchor_map : {} },
+    stateMap  = {
+      $container  : undefined,
+      anchor_map  : {},
+      resize_idto : undefined
+    },
     jqueryMap = {},
 
     copyAnchorMap, setJqueryMap,
-    changeAnchorPart, onHashchange,
+    changeAnchorPart, onHashchange, onResize,
     setChatAnchor, initModule;
     //---------- end module scope var ---------------------
 
@@ -171,6 +176,20 @@ spa.shell = (function () {
 
       return false;
     }
+
+    // event handler /onResize/
+    onResize = function () {
+      if ( stateMap.resize_idto ) { return true; }
+
+      spa.chat.handleResize();
+      stateMap.resize_idto = setTimeout(
+        function () { stateMap.resize_idto = undefined; },
+        configMap.resize_interval
+      );
+
+      return true;
+    };
+
     //---------- end event handler ------------------------
 
     //---------- callback ---------------------------------
@@ -224,6 +243,7 @@ spa.shell = (function () {
       // trigger events ensure that the anchor can be regarded as a loading state
       //
       $(window)
+        .bind( 'resize', onResize )
         .bind( 'hashchange', onHashchange )
         .trigger( 'hashchange' );
 
