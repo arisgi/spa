@@ -52,7 +52,7 @@ spa.chat = (function () {
       slider_opened_em     : 18,
       slider_closed_em     : 2,
       slider_opened_min_em : 10,
-      slider_height_min_em : 20,
+      window_height_min_em : 20,
       slider_opened_title  : 'Click to close',
       slider_closed_title  : 'Click to open',
 
