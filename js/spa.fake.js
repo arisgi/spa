@@ -27,7 +27,7 @@ spa.fake = (function () {
       },
       { name : 'Mike',
         _id  : 'id_02',
-        css_map {
+        css_map : {
           top  : 60,
           left : 20,
           'background-color' : 'rgb( 128, 255, 128 )'
@@ -35,7 +35,7 @@ spa.fake = (function () {
       },
       { name : 'Pebbles',
         _id  : 'id_03',
-        css_map {
+        css_map : {
           top  : 100,
           left : 20,
           'background-color' : 'rgb( 128, 192, 192 )'
@@ -43,7 +43,7 @@ spa.fake = (function () {
       },
       { name : 'Wilma',
         _id  : 'id_04',
-        css_map {
+        css_map : {
           top  : 140,
           left : 20,
           'background-color' : 'rgb( 192, 128, 128 )'
