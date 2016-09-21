@@ -285,7 +285,7 @@ spa.chat = (function () {
 
   onSetchatee = function ( event, arg_map ) {
     var
-      ner_chatee = arg_map.new_chatee,
+      new_chatee = arg_map.new_chatee,
       old_chatee = arg_map.old_chatee;
 
     jqueryMap.$input.focus();
@@ -303,7 +303,7 @@ spa.chat = (function () {
       .find( '.spa-chat-list-name' )
       .removeClass( 'spa-x-select' )
       .end()
-      .find( '[data-id=]' + arg_map.new_chatee.id + ']' )
+      .find( '[data-id=' + arg_map.new_chatee.id + ']' )
       .addClass( 'spa-x-select' );
 
     writeAlert( 'Now chatting with ' + arg_map.new_chatee.name );
@@ -313,7 +313,7 @@ spa.chat = (function () {
 
   onListchange = function ( event ) {
     var
-      vlist_html = String(),
+      list_html = String(),
       people_db  = configMap.people_model.get_db(),
       chatee     = configMap.chat_model.get_chatee();
 
