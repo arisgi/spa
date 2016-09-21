@@ -215,7 +215,7 @@ spa.model = (function (){
         && msg_map.sender_id !== chatee.id
       ) { set_chatee( msg_map.sender_id ); }
 
-      $.gevent.publish( 'spa-updatechat', [ msg_type ] );
+      $.gevent.publish( 'spa-updatechat', [ msg_map ] );
     };
 
     _leave_chat = function () {
