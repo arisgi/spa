@@ -106,7 +106,7 @@ spa.avtr = (function () {
     stateMap.drag_bg_color = $target.css( 'background-color' );
 
     $target
-      .addClass( 'spa-x-drag' )
+      .addClass( 'spa-x-is-drag' )
       .css( 'background-color', '' );
   };
 
