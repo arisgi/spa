@@ -206,7 +206,7 @@ spa.avtr = (function () {
   };
 
   initModule = function ( $container ) {
-    setJueryMap( $container );
+    setJqueryMap( $container );
 
     $.gevent.subscribe( $container, 'spa-setchatee', onSetchatee );
     $.gevent.subscribe( $container, 'spa-listchange', onListchange );
