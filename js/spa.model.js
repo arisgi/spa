@@ -188,7 +188,7 @@ spa.model = (function (){
         makePerson( make_person_map );
       }
 
-      stateMap.person_db.sort( 'name' );
+      stateMap.people_db.sort( 'name' );
     };
 
     _publish_listchange = function ( arg_list ) {
