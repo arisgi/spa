@@ -271,6 +271,13 @@ spa.shell = (function () {
       });
       spa.chat.initModule( jqueryMap.$container );
 
+      spa.avtr.configModule({
+        chat_model   : spa.model.chat,
+        people_model : spa.model.people
+      });
+      spa.avtr.initModule( jqueryMap.$nav );
+
+
       // process event that changes URI
       // this is to run after initialize all of the function modules
       // otherwise you can't handle the trigger event
